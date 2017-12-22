@@ -18,9 +18,9 @@ seedCandidates = list()
 
 # just a helper ;-)
 def printDonation():
-	print "\nIf this script could help you to get your IOTAs back, feel free to send some love to the following address:\n"
-	print "9EITUFEVHRFFFMCLLPEFPUYVCYEQZHXKXWQKIEKMUWDXPELEBZRTNYVNIKVVIJGMMQQJITQYKNTPUYAECKPOEHN9SX"
-	print ""
+	print ("\nIf this script could help you to get your IOTAs back, feel free to send some love to the following address:\n")
+	print ("9EITUFEVHRFFFMCLLPEFPUYVCYEQZHXKXWQKIEKMUWDXPELEBZRTNYVNIKVVIJGMMQQJITQYKNTPUYAECKPOEHN9SX")
+	print ("")
 
 # This will generate all 81*26=2106 alternative seeds when mistyping a seed at EXACTLY ONE character
 def generateSeeds():
@@ -55,11 +55,11 @@ def checkSeeds(seeds):
 	else:
 		if len(seedCandidates) > 0:
 			seedCandidates.reverse()
-			print "\n###############"
-			print "### SUMMARY ###"
-			print "###############\n"
-			print "One of the following seeds could be the one that you were missing."
-			print "Please check their balances manually:\n"
+			print ("\n###############")
+			print ("### SUMMARY ###")
+			print ("###############\n")
+			print ("One of the following seeds could be the one that you were missing.")
+			print ("Please check their balances manually:\n")
 
 			print("\n".join(seedCandidates))
 
@@ -82,12 +82,12 @@ def checkAddresses(seed):
 		address = str([addresses[i]][0])
 		if(publicTransactionAddress.startswith(address)):
 			if(numberOfAddresses == 1):
-				print "\nAs we only checked one (i.e. the first) address of a seed, there can only be one result."
-				print "Please try to login with the following seed and check your balance:\n\n" + seed + "\n"
+				print ("\nAs we only checked one (i.e. the first) address of a seed, there can only be one result.")
+				print ("Please try to login with the following seed and check your balance:\n\n" + seed + "\n")
 				printDonation()
 				sys.exit()
 			else:
-				print "\nTry to login with this seed (others may follow): " + seed + "\n"
+				print ("\nTry to login with this seed (others may follow): " + seed + "\n")
 				seedCandidates.append(seed)
 		i += 1
 
