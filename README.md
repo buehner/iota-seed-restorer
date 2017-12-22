@@ -11,12 +11,16 @@ If you mistyped exactly one (!) of 81 characters, there are `81*(27-1) = 81*26 =
 
 ### Requirements
 
-* [Python](https://www.python.org/downloads/)
-* The PyOTA and six libraries are required for the script to work. Navigate to the directory of the script and call this command: `pip install -r requirements.txt`
+* [Python](https://www.python.org/downloads/) should be installed on your system
+* The PyOTA and six libraries are required for the script to work:
+  1. On Ubunut-based distributions, install the `python-dev` package: `sudo apt-get install python-dev` (this will probably not be necessary on a windows system)
+  2. Open a terminal, navigate to the directory of the script and call this command: `sudo pip install -r requirements.txt` (remove the `sudo` on windows)
+
+I did not test this on windows, but it should also work there.
 
 ### Usage
 
-Just call `python IotaSeedRestorer.py` and follow the instructions.
+Just call `python IotaSeedRestorer.py` (in a terminal in the directory of the script) and follow the instructions.
 
 You will be asked for the following information:
 
