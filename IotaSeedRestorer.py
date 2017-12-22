@@ -5,6 +5,13 @@ import string
 
 # get user input
 mistypedSeed = moves.input("\nPlease enter the seed you possibly mistyped at EXACTLY ONE character:\n").upper()
+
+# check seed length
+mistypedSeedLength = len(mistypedSeed)
+if(mistypedSeedLength < 81):
+	print ("ERROR: Your seed has a length of " + str(mistypedSeedLength) + ", but expected is a length of 81!")
+	sys.exit()
+
 publicTransactionAddress = moves.input("\nPlease enter the public receive address of a transaction you performed:\n").upper()
 iotaNode = moves.input("\nPlease enter a node address/host to connect to (something like http://{HOST}:14265):\n")
 numberOfAddresses = int(moves.input("\nHow many of the first addresses of a seed do you want to check? (Large numbers will significantly increase the duration of the process!)\n"))
