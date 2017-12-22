@@ -13,7 +13,7 @@ If you mistyped exactly one (!) of 81 characters, there are `81*(27-1) = 81*26 =
 
 * [Python](https://www.python.org/downloads/) should be installed on your system
 * The PyOTA and six libraries are required for the script to work:
-  1. On Ubunut-based distributions, install the `python-dev` package: `sudo apt-get install python-dev` (this will probably not be necessary on a windows system)
+  1. On Ubuntu-based distributions, install the `python-dev` package: `sudo apt-get install python-dev` (this will probably not be necessary on a windows system)
   2. Open a terminal, navigate to the directory of the script and call this command: `sudo pip install -r requirements.txt` (remove the `sudo` on windows)
 
 I did not test this on windows, but it should also work there.
