@@ -79,7 +79,7 @@ def checkAddresses(seed):
 	# check if one of the addresses matches the public known transaction address
 	i = 0
 	while i < numberOfAddresses:
-		address = str([addresses[i]][0].with_valid_checksum())
+		address = str([addresses[i]][0])
 		if(publicTransactionAddress.startswith(address)):
 			if(numberOfAddresses == 1):
 				print "\nAs we only checked one (i.e. the first) address of a seed, there can only be one result."
