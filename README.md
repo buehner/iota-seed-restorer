@@ -2,7 +2,7 @@
 
 This python script may help you to restore your missing IOTA seed in the following scenario:
 
-* You mistyped your seed at **EXACTLY ONE** of the 81 seed characters
+* You mistyped your seed at **EXACTLY ONE** of your seed's characters
 * You know a public receive address of a transaction that has been performed (with the seed you are missing)
 
 ### How does it work?
