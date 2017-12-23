@@ -7,7 +7,8 @@ This python script may help you to restore your missing IOTA seed in the followi
 
 ### How does it work?
 
-If you mistyped exactly one (!) of 81 characters, there are `81*(27-1) = 81*26 = 2106` possibilities for your correct seed. This script makes use of the [PyOTA API](https://github.com/iotaledger/iota.lib.py) to check if the receive address (you made a transaction with) matches one or more of these 2106 seeds.
+A seed has a length of 81 characters. If your seed has a length less than 81 characters, the rest (to a length of 81 chars) will automatically be filled with `9`s.
+So, if you mistyped exactly one (!) of your seed characters, there are `lengthOfYourSeed*(27-1) = lengthOfYourSeed*26` possibilities for your correct seed. This script makes use of the [PyOTA API](https://github.com/iotaledger/iota.lib.py) to check if the receive address (you made a transaction with) matches one or more of these `lengthOfYourSeed*26` seeds.
 
 ### Requirements
 
@@ -28,7 +29,7 @@ You will be asked for the following information:
 1. The seed you possibly mistyped at exactly one (!) character.
 2. The public receive address of a transaction you performed.
 3. A node address/host to connect to with the PyOTA API. [See here](https://iota.dance/nodes).
-4. You have to define how many of the first addresses of each of the 2106 seeds will be requested to find a match with the address from point 2.
+4. You have to define how many of the first addresses of each of the `lengthOfYourSeed*26` seeds will be requested to find a match with the address from point 2.
   * **Large numbers will significantly increase the duration of the process!**
   * If you know that you only made one transaction (or you simply know the first address of your missing seed), use `1` as the value.
   * Be careful when increasing this number!
@@ -37,7 +38,7 @@ You can cancel the script anytime with `CTRL+C`.
 
 If a matching seed candidate is found during the process, the seed will be printed (and the process will continue).
 
-At the end of processing all 2106 seeds (which may take a while), there will be a summary with a list of all seeds you can try. Otherwise the script will inform you that it could not find any matching seeds.
+At the end of processing all `lengthOfYourSeed*26` seeds (which may take a while), there will be a summary with a list of all seeds you can try. Otherwise the script will inform you that it could not find any matching seeds.
 
 ### Donations
 

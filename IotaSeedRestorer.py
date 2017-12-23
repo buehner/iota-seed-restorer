@@ -8,11 +8,20 @@ mistypedSeed = moves.input("\nPlease enter the seed you possibly mistyped at EXA
 
 # check seed length
 mistypedSeedLength = len(mistypedSeed)
-if(mistypedSeedLength < 81):
-	print ("ERROR: Your seed has a length of " + str(mistypedSeedLength) + ", but expected is a length of 81!")
+if(mistypedSeedLength < 1):
+	print ("ERROR: You did not enter a valid seed!")
+	sys.exit()
+if(mistypedSeedLength > 81):
+	print ("ERROR: Your seed has a length of " + str(mistypedSeedLength) + " and thereby exceeds the maximum length of 81 characters.")
 	sys.exit()
 
 publicTransactionAddress = moves.input("\nPlease enter the public receive address of a transaction you performed:\n").upper()
+
+# check address length
+if(len(publicTransactionAddress) < 81):
+	print ("ERROR: Your address has a length of " + str(len(publicTransactionAddress)) + ", but the expected length is 81 (or 90 with checksum).")
+	sys.exit()
+
 iotaNode = moves.input("\nPlease enter a node address/host to connect to (something like http://{HOST}:14265):\n")
 numberOfAddresses = int(moves.input("\nHow many of the first addresses of a seed do you want to check? (Large numbers will significantly increase the duration of the process!)\n"))
 
@@ -29,11 +38,11 @@ def printDonation():
 	print ("9EITUFEVHRFFFMCLLPEFPUYVCYEQZHXKXWQKIEKMUWDXPELEBZRTNYVNIKVVIJGMMQQJITQYKNTPUYAECKPOEHN9SX")
 	print ("")
 
-# This will generate all 81*26=2106 alternative seeds when mistyping a seed at EXACTLY ONE character
+# This will generate all alternative seeds when mistyping a seed at EXACTLY ONE character
 def generateSeeds():
 	altSeeds = list()
 
-	for i in range(0, 81):
+	for i in range(0, mistypedSeedLength):
 		currentChar = mistypedSeed[i]
 
 		# build all possible other chars that may come from mistyping
@@ -99,7 +108,7 @@ def checkAddresses(seed):
 		i += 1
 
 # run the script...
-# start with generation of 2106 seeds
+# start with generation of seeds
 seeds = generateSeeds();
 
 # some info
